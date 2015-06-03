@@ -27,7 +27,7 @@ compile sass, minify javascript, start  and other cool things. Our project uses 
 
 ###Node.js/NPM
 NPM is a package manager that allows for easy installation of programs and packages through the terminal and is required for installing Grunt dependencies, and comes along with the Node.js environment.
-_Note - Latest Node (0.12) as of June 3, 2015 is not compatible with serveral packages used for this project, intead we'll be using version 0.10_
+*Note - Latest Node (0.12) as of June 3, 2015 is not compatible with serveral packages used for this project, intead we'll be using version 0.10*
 - Install via the website: http://blog.nodejs.org/2015/01/26/node-v0-10-36-stable/
 
 ###Git
