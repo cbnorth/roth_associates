@@ -1,7 +1,6 @@
 # roth_associates
 
-#new developer setup 
-##(for Mac)
+##new developer setup (for Mac)
 
 ##Technology Stack/Overview
 This is a staticly generated website built on a Node/Wintersmith/Jade/Markdown/SASS tech stack.
