@@ -1,0 +1,11 @@
+*.sublime*
+
+public_html
+
+src/reference
+
+src/.sass-cache/*
+
+**/.sass-cache/*
+
+node_modules
