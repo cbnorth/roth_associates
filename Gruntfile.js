@@ -16,7 +16,7 @@ module.exports = function(grunt) {
                     livereload: true,
                     port: 8080,
                     base: {
-                        path: "build",
+                        path: "../",
                         options: {
                             extensions: ['html']
                         }
