@@ -6,7 +6,12 @@ block beforeBody
 block content
     section
         h1 contact
-        form(action="http://formspree.io/burke.cf@gmail.com" method="POST")
-          input(type="email" name="_replyto")
-          textarea(name="body")
-          input(type="submit" value="Send")
+        form(id="contact-form" action="//formspree.io/burke.cf@gmail.com" method="post")
+            input(type="text" name="Name" placeholder="Name" required)
+            input(type="email" name="Email" placeholder="Email" required)
+            textarea(name="Message" cols="30" rows="6" placeholder="Message" required)
+            <!-- CONFIG -->
+            input(class="is-hidden" type="text" name="_gotcha")
+            input(type="hidden" name="_subject" value="Subject")
+            <!-- /CONFIG -->
+            input(class="submit" type="submit" value="Send")
