@@ -49,8 +49,8 @@ module.exports = function(grunt) {
         sync: {
             copy_resources: {
                 files: [
-                    { cwd: 'contents', src: 'css/**', dest: 'build' },
-                    { cwd: 'contents', src: 'scripts/script.min.js', dest: 'build' }
+                    { cwd: 'contents', src: 'css/**', dest: '../' },
+                    { cwd: 'contents', src: 'scripts/script.min.js', dest: '../' }
                 ]
             }
         },

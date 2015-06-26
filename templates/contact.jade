@@ -1,0 +1,12 @@
+extends layout
+
+block beforeBody
+  - bodyClasses.push('contact_lp nav_dark')
+
+block content
+    section
+        h1 contact
+        form(action="http://formspree.io/burke.cf@gmail.com" method="POST")
+          input(type="email" name="_replyto")
+          textarea(name="body")
+          input(type="submit" value="Send")

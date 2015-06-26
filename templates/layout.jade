@@ -1,6 +1,8 @@
 doctype html
-block vars
-  - var bodyclass = null;
+
+- var bodyClasses = [];
+block beforeBody
+
 html(lang='en')
   head
     block head
@@ -13,7 +15,7 @@ html(lang='en')
       link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300')
       link(rel='stylesheet', href=contents.css['main.css'].url)
-  body(class=bodyclass)
+  body(class=bodyClasses)
     header.header
       div.content-wrap
         block header
@@ -62,4 +64,11 @@ html(lang='en')
           });
         }
       });
+
+      $.ajax({
+            url: "//formspree.io/burke.cf@gmail.com", 
+            method: "POST",
+            data: {message: "hello!"},
+            dataType: "json"
+        });
 
