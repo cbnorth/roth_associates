@@ -5,15 +5,16 @@ html {
 
 body {
     @include font-size(14px);
-    //background-color: $primary-background;
     background-color: #fff;
-    color: $copy_color;
     min-width: 320px;
+    font-family: $primary_font;
+    color: $copy_color;
+    letter-spacing: 1px;
 }
 
 //helper classes
 .mobile_only {
-    @include breakpoint(sm) {
+    @include breakpoint(med) {
         display: none;
     }
 }
@@ -68,47 +69,10 @@ li {
     padding-bottom: 10px;
 }
 
-.sub_header {
-    font-family: $heavy_font;
-    letter-spacing: 1px;
-    color: $copy_color;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.heavy {
+    font-family: $secondary_font;
+    font-weight: 500;
 }
-
-#logo {
-    position: relative;
-    margin: 16px 0 0 0;
-    float: left;
-    z-index: 101;
-
-    a {
-        display: block;
-        width: 40px;
-        height: 40px;
-        background-image: url(../assets/images/iF_logo_white.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        text-indent: -9999px;
-    }
-    
-    @include breakpoint(med) {
-        margin-top: 17px;
-        a {
-            width: 207px;
-            height: auto;
-            padding-bottom: 4%;
-            background-size: 100%;
-        }
-    }
-}
-
-//navigation
-nav
-    li {
-        display: inline-block;
-    }
-
 
 //iconography
 .icon_x_close {
@@ -145,141 +109,236 @@ nav
 
 }
 
-//footer & social icons
-a.symbol {
-    position: relative;
-
-    &.icon {
-        @include font-size(44px);
-        margin: 0 8px;
-        &:before {
-            content: "";
-            margin: 0;
-        }
-
-        &.facebook {
-            margin-left: 0;
-        }
-    }
-}
-
-
-footer {
-    color: #fff;
-    padding-bottom: 82px;
+#logo {
+    background-image:url(/assets/images/logo-blue.png);
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    background-size: 100%;
+    float: left;
+    height: 73px;
+    width: 191px;
+    margin: 25px 0;
     display: none;
 
     @include breakpoint(med) {
         display: block;
-        margin-top: 35px;
     }
 
-    h1 {
-        @include font-size(12px);
-        font-family: $bold_font;
-        margin-top: 18px;
-    }
-
-    .column {
-        font-family: $secondary_font;
-    }
-    a.symbol {z-index: 2;}
-    a.symbol:after {
-        z-index: -1;
-        background-color: transparent;
-        top: 16px;
-        width: 27px;
-        height: 28px;
-        left: 9px;
-    }
-
-    a.symbol:hover:after {
-        background-color: transparent;
-    }
-}
-
-.copyright {
-    text-align: center;
-
-    p {
-        color: #fff;
-        @include font-size(10px);
-    }
-}
-
-.footer_links {
-    text-align: center;
     a {
-        color: #fff;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//navigation
+nav {
+    li {
+        display: inline-block;
+        line-height: 16px;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        @extend .heavy;
+        @include font-size(14px);
+        color: $copy_color;
+        text-transform: uppercase;
+        padding-right: 35px;
         text-decoration: none;
-        @include font-size(12px);
-        font-family: $heavy_font;
-        text-transform: none;
         letter-spacing: 2px;
 
-        &:after {
-            content: "|";
-            color: #fff !important;
-            margin: 0 10px;
+        &:hover {
+            color: $hover;
+        }
+    }
+}
+
+.home_page {
+    .home a {
+        color: $active_link;
+    }
+}
+
+.associates_lp {
+    .associates a {
+        color: $active_link;
+    }
+}
+
+.practices_lp {
+    .practices a {
+        color: $active_link;
+    }
+}
+
+.about_lp {
+    .about a {
+        color: $active_link;
+    }
+}
+
+.contact_lp {
+    .contact a {
+        color: $active_link;
+    }
+}
+
+header {
+    background-color: $primary_background;
+    padding: 15px 0px;
+
+    .mobile_nav_button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        @include font-size(18px);
+        @extend .heavy;
+        color: $alt_copy_color;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+
+        &:before {
+            content: '';
+            @include gavel;
+            background-size: 15px;
+            width: 15px;
+            height: 26px;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    nav {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(opacity .3s ease-in-out);
+        ul {
+            text-align: center;
+            li {
+                display: block;
+                width: 100%;
+                a {
+                    color: $alt_copy_color;
+                    padding-right: 0;
+                    display: block;
+                    line-height: 40px;
+                }
+            }
         }
 
-        &:last-child:after {
-            content: none;
+        &.active {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            margin-top: 12px;
+        }
+    }
+
+    @include breakpoint(med) {
+        background-color: #fff;
+
+        .mobile_nav_button {
+            display: none;
+        }
+
+        nav {
+            display: block;
+            clear: left;
+            opacity: 1;
+            visibility: visible;
+
+            ul {
+                text-align: left;
+                li {
+                    display: inline-block;
+                    width: auto;
+
+                    a {
+                        padding-right: 35px;
+                        color: $copy_color;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint(lg) {
+        nav {
+            clear: none;
+            float: left;
+            padding-left: 55px;
+            padding-top: 41px;
+        }
+    }
+}
+
+footer {
+    background-color: $primary_background;
+    
+    nav {
+        display: none;
+        margin-bottom: 21px;
+
+        a {
+            color: $alt_copy_color;
+        }
+
+        @include breakpoint(med) {
+            display: block;
+        }
+    }
+
+    .footer_links {
+        position: relative;
+        margin: 50px 0;
+
+        .copyright {
+            text-align: center;
+            color: $alt_copy_color;
+            @include font-size(12px);
+            @extend .heavy;
+            text-transform: uppercase;
+            line-height: 16px;
+            padding: 0;
+            margin: 0;
+            span {
+                padding-left: 15px;
+                color: inherit;
+                display: block;
+            }
+        }
+
+        @include breakpoint(med) {
+            padding-left: 75px;
+
+            .copyright {
+                text-align: left;
+
+                span {
+                    display: inline;
+                }
+            }
+
+            &:before {
+                content: '';
+                @include gavel;
+                position: absolute;
+                left: 0;
+                top: -16px;
+                width: 39px;
+                height: 71px;
+            }
         }
     }
 }
 
 //link styles
+
 a {
-    font-family: $primary_font;
-    @include font-size(16px);
-    text-decoration: underline;
-    color: $copy_color;
-    @include transition (color .35s ease);
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-
-    &:hover {
-        color: $hover;
-    }
-
-    &.btn {
-        display: inline-block;
-        background-color: $dark_background;
-        color: #fff;
-        padding: 6px 30px;
-        max-width: 185px;
-        text-align: center;
-        text-decoration: none;
-        margin: 10px 0;
-        cursor: pointer;
-        font-family: $heavy_font;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        @include transition (all .35s ease);
-
-        &:hover {
-            background-color: $hover;
-        }
-
-        &.btn_on_dark {
-
-            &:hover {
-                background-color: #fff;
-                color: $copy_color;
-            }
-        }
-    }
-
-    &.go_back {
-        text-decoration: none;
-        &:before {
-            content: "\25BA";
-            transform: rotate(180deg);
-            display: inline-block;
-            position: relative;
-            top: -3px;
-            padding-right: 10px;
-            left: -10px;
-        }
-    }
+    @include transition(color .3s ease-in-out);
 }

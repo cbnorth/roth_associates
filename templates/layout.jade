@@ -21,17 +21,19 @@ html(lang='en')
         div.grid
             div.column.size12of12
               h1#logo
-                  a(href="/") logo
+                  a(href="/") Roth &amp; Associates
+              a.mobile_nav_button menu
               include navigation.jade
     div#content
       block content
     footer
       div.container
         div.grid
-            div.column.size12of12
-              include navigation.jade
-              section.copy
-                p &copy; #{ new Date().getFullYear() } #{ locals.owner } All rights reserved
+            div.column.size12of12.footer_content
+              div.footer_links
+                include navigation.jade
+                p.copyright &copy; #{ new Date().getFullYear() } #{ locals.owner }
+                  span All rights reserved
     block scripts
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
       script.
@@ -43,4 +45,8 @@ html(lang='en')
           };
           try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
           catch(e){window.attachEvent("onload", $buo_f)}
+
+          $('.mobile_nav_button').click(function(){
+            $('header nav').toggleClass('active');
+          });
 

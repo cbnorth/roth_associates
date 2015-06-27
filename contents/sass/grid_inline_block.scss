@@ -21,7 +21,7 @@
     padding: 0 $gutter-width-med/2;
   }
   @include breakpoint(lg) {
-    padding: 0 $gutter-width-lg/2;
+    padding: 0 45px;
   }
   @include breakpoint(xl) {
     padding: 0;

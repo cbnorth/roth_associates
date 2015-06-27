@@ -121,19 +121,11 @@
     }
 }
 
-@mixin dark_sharing {
-    label {
-        border-color: $dark_background;
-
-        span {
-            color: $copy_color;
-        }
-
-        &.hide_button:after {
-            color: $copy_color;
-        }
-    }
+@mixin gavel {
+    background-image:url(/assets/images/gavel.png);
+    background-repeat: no-repeat;
 }
+
 
 @function columns($columns, $container-columns: $grid-columns) {
   $width: $columns * $column-width;

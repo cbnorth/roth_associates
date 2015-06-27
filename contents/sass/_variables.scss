@@ -1,29 +1,19 @@
 // ----- COLORS -----
-$ifBlack:rgba(71,71,71,1);
-$ifTeal: #44dbef;
-$ifGray: rgba(242,242,242,1);
-$primary_background: $ifGray;
-$dark_background: $ifBlack;
-$copy_color: $ifBlack;
-$hover: $ifTeal;
-$btn_color: $ifTeal;
-$pop_up_color: $ifTeal;
-$headline_color: $ifTeal;
-$background_color: $ifGray;
-$border_color: $ifTeal;
+$blue: #374464;
+$blue_secondary: #3e4c6f;
+$gold: #c37e15;
+$primary_background: $blue;
+$headline_color: $gold;
+$hover: $gold;
+$active_link: $gold;
+$copy_color: $blue_secondary;
+$alt_copy_color: #fff;
 
 // ----- FONTS -----
-$avenir:  AvenirLTStd-Book;
-$avenir_black: AvenirLTStd-Black;
-$avenir_medium: AvenirLTStd-Medium;
-$avenir_heavy: AvenirLTStd-Heavy;
-$secondary_font: $avenir;
-$bold_font: $avenir_black;
-$medium_font: $avenir_medium;
-$heavy_font: $avenir_heavy;
-$merriweather: 'Merriweather', serif;
-$primary_font: $merriweather;
-
+$garamond: 'EB Garamond', serif;
+$nunito: 'Nunito', sans-serif;
+$primary_font: $garamond;
+$secondary_font: $nunito;
 
 
 // ----- GRID -----
