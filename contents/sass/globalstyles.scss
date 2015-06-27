@@ -1,0 +1,285 @@
+html {
+    font-size: 62.5%;
+    overflow: visible;
+}
+
+body {
+    @include font-size(14px);
+    //background-color: $primary-background;
+    background-color: #fff;
+    color: $copy_color;
+    min-width: 320px;
+}
+
+//helper classes
+.mobile_only {
+    @include breakpoint(sm) {
+        display: none;
+    }
+}
+
+.no_mobile {
+    display: none;
+    @include breakpoint(sm) {
+        display: initial;
+    }
+}
+
+.no_break {
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+//lazy load fade in animations
+div [data-bg]{opacity:0}
+.lazy-hidden{
+    @include transition(opacity .3s);
+    opacity:1;
+}
+
+//typography
+h1, h2, h3, h4, h5, h6, p, li, span, dl, dt, dd {
+    color: $copy_color;
+}
+
+h1 {
+    font-family: $secondary_font;
+    font-weight: normal;
+    color: $headline_color;
+    @include font-size(40px);
+
+    @include breakpoint(med) {
+        @include font-size(50px);
+    }
+}
+
+p {
+    font-family: $primary_font;
+    @include font-size(16px);
+    line-height: 35px;
+}
+
+li {
+    font-family: $primary_font;
+    @include font-size(16px);
+    line-height: 35px;
+    padding-bottom: 10px;
+}
+
+.sub_header {
+    font-family: $heavy_font;
+    letter-spacing: 1px;
+    color: $copy_color;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#logo {
+    position: relative;
+    margin: 16px 0 0 0;
+    float: left;
+    z-index: 101;
+
+    a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url(../assets/images/iF_logo_white.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-indent: -9999px;
+    }
+    
+    @include breakpoint(med) {
+        margin-top: 17px;
+        a {
+            width: 207px;
+            height: auto;
+            padding-bottom: 4%;
+            background-size: 100%;
+        }
+    }
+}
+
+//navigation
+nav
+    li {
+        display: inline-block;
+    }
+
+
+//iconography
+.icon_x_close {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+    background: transparent;
+    z-index: 1000;
+
+    &:before, &:after {
+        position: absolute;
+        content: "";
+        width: 26px;
+        height: 3px;
+        background-color: #fff;
+        top: 15px;
+        left: 5px;
+    }
+
+    &:before {
+        @include transform(rotate(-315deg));
+    }
+
+    &:after {
+        @include transform(rotate(315deg));
+    }
+
+    @include breakpoint(med) {
+        display: none;
+    }
+
+}
+
+//footer & social icons
+a.symbol {
+    position: relative;
+
+    &.icon {
+        @include font-size(44px);
+        margin: 0 8px;
+        &:before {
+            content: "";
+            margin: 0;
+        }
+
+        &.facebook {
+            margin-left: 0;
+        }
+    }
+}
+
+
+footer {
+    color: #fff;
+    padding-bottom: 82px;
+    display: none;
+
+    @include breakpoint(med) {
+        display: block;
+        margin-top: 35px;
+    }
+
+    h1 {
+        @include font-size(12px);
+        font-family: $bold_font;
+        margin-top: 18px;
+    }
+
+    .column {
+        font-family: $secondary_font;
+    }
+    a.symbol {z-index: 2;}
+    a.symbol:after {
+        z-index: -1;
+        background-color: transparent;
+        top: 16px;
+        width: 27px;
+        height: 28px;
+        left: 9px;
+    }
+
+    a.symbol:hover:after {
+        background-color: transparent;
+    }
+}
+
+.copyright {
+    text-align: center;
+
+    p {
+        color: #fff;
+        @include font-size(10px);
+    }
+}
+
+.footer_links {
+    text-align: center;
+    a {
+        color: #fff;
+        text-decoration: none;
+        @include font-size(12px);
+        font-family: $heavy_font;
+        text-transform: none;
+        letter-spacing: 2px;
+
+        &:after {
+            content: "|";
+            color: #fff !important;
+            margin: 0 10px;
+        }
+
+        &:last-child:after {
+            content: none;
+        }
+    }
+}
+
+//link styles
+a {
+    font-family: $primary_font;
+    @include font-size(16px);
+    text-decoration: underline;
+    color: $copy_color;
+    @include transition (color .35s ease);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover {
+        color: $hover;
+    }
+
+    &.btn {
+        display: inline-block;
+        background-color: $dark_background;
+        color: #fff;
+        padding: 6px 30px;
+        max-width: 185px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px 0;
+        cursor: pointer;
+        font-family: $heavy_font;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include transition (all .35s ease);
+
+        &:hover {
+            background-color: $hover;
+        }
+
+        &.btn_on_dark {
+
+            &:hover {
+                background-color: #fff;
+                color: $copy_color;
+            }
+        }
+    }
+
+    &.go_back {
+        text-decoration: none;
+        &:before {
+            content: "\25BA";
+            transform: rotate(180deg);
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            padding-right: 10px;
+            left: -10px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import '_variables';
+@import '_mixins';
+@import 'normalize';
+@import 'grid_inline_block';
+@import 'globalstyles';
+@import 'forms';
+
+
+
+.latest_blog {
+    text-align: center;
+    a, h4, p {
+        opacity: 0;
+        @include transition(all .5s ease-in-out);
+        @include transform (scale(.97));
+    }
+
+    &.active {
+        text-align: left;
+        a, h4, p {
+            opacity: 1;
+            @include transform (scale(1));
+        }
+    }
+
+}

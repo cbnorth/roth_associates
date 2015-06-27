@@ -1,17 +1,46 @@
 extends layout
 
 block beforeBody
-  - bodyClasses.push('contact_lp nav_dark')
+  - bodyClasses.push('contact_lp')
 
 block content
     section
-        h1 contact
-        form(id="contact-form" action="//formspree.io/burke.cf@gmail.com" method="post")
-            input(type="text" name="Name" placeholder="Name" required)
-            input(type="email" name="Email" placeholder="Email" required)
-            textarea(name="Message" cols="30" rows="6" placeholder="Message" required)
-            <!-- CONFIG -->
-            input(class="is-hidden" type="text" name="_gotcha")
-            input(type="hidden" name="_subject" value="Subject")
-            <!-- /CONFIG -->
-            input(class="submit" type="submit" value="Send")
+        div.container
+            div.grid
+                div.column.size12of12
+                    h1 contact
+                    form#contact-form(action="//formspree.io/burke.cf@gmail.com" method="post")
+                        input(type="text" name="Name" placeholder="Name" required)
+                        input(type="email" name="Email" placeholder="Email" required)
+                        textarea(name="Message" cols="30" rows="6" placeholder="Message" required)
+                        <!-- CONFIG -->
+                        input(class="gotcha" type="text" name="_gotcha")
+                        input(type="hidden" name="_subject" value="Subject")
+                        <!-- /CONFIG -->
+                        input(class="submit" type="submit" value="Send")
+
+block append scripts
+    script.
+      //formspree ajax
+      var $contactForm = $('#contact-form');
+      $contactForm.submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: '//formspree.io/burke.cf@gmail.com',
+          method: 'POST',
+          data: $(this).serialize(),
+          dataType: 'json',
+          beforeSend: function() {
+            $contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+          },
+          success: function(data) {
+            $contactForm.find('.alert--loading').hide();
+            $contactForm.fadeOut();
+            $contactForm.after('<div class="alert alert--success">Message sent!</div>');
+          },
+          error: function(err) {
+            $contactForm.find('.alert--loading').hide();
+            $contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+          }
+        });
+      });

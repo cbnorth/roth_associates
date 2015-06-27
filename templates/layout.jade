@@ -14,78 +14,33 @@ html(lang='en')
           = locals.name
       link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
       link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300')
-      link(rel='stylesheet', href=contents.css['main.css'].url)
+      link(rel='stylesheet', href=contents.css['styles.css'].url)
   body(class=bodyClasses)
     header.header
-      div.content-wrap
-        block header
-          div.logo
-            h1
-              a(href=locals.url)= locals.name
-            p.description= locals.description
+      div.container
+        div.grid
+            div.column.size12of12
+              h1#logo
+                  a(href="/") logo
+              include navigation.jade
     div#content
-      div.content-wrap
-        block content
-          h2 Welcome to zombocom!
-    div.latest_blog
+      block content
     footer
-      div.content-wrap
-        block footer
-          section.about
-            !=contents['about.md'].html
-          section.copy
-            p &copy; #{ new Date().getFullYear() } #{ locals.owner } &mdash; powered by&nbsp;
-              a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-              //- please leave the "powered by" if you use the design
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
-    script.
-        var $buoop = {c:2}; 
-        function $buo_f(){ 
-         var e = document.createElement("script"); 
-         e.src = "//browser-update.org/update.js"; 
-         document.body.appendChild(e);
-        };
-        try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-        catch(e){window.attachEvent("onload", $buo_f)}
-
-    script.
-      var MYBLOG_LIMIT = 1;
-      var MYWRAPPER_CLASS = 'latest_blog';
- 
-      var WP={open:function(b){var a={posts:function(){var d=MYBLOG_LIMIT;var e=0;var c={all:function(g){var f=b+"/api/get_recent_posts/";f+="?count="+d+"&page="+e+"&callback=?";jQuery.getJSON(f,function(l){var k=l.posts;for(var j=0;j<k.length;j++){var h=k[j];h.createComment=function(i,m){i.postId=h.id;a.comments().create(i,m)}}g(k)})},findBySlug:function(f,h){var g=b+"/api/get_post/";g+="?slug="+f+"&callback=?";jQuery.getJSON(g,function(i){h(i.post)})},limit:function(f){d=f;return c},page:function(f){e=f;return c}};return c},pages:function(){var c={findBySlug:function(d,f){var e=b+"/api/get_page/";e+="?slug="+d+"&callback=?";jQuery.getJSON(e,function(g){f(g.page)})}};return c},categories:function(){var c={all:function(e){var d=b+"/api/get_category_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.categories)})}};return c},tags:function(){var c={all:function(e){var d=b+"/api/get_tag_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.tags)})}};return c},comments:function(){var c={create:function(f,e){var d=b+"/api/submit_comment/";d+="?post_id="+f.postId+"&name="+f.name+"&email="+f.email+"&content="+f.content+"&callback=?";jQuery.getJSON(d,function(g){e(g)})}};return c}};return a}};
- 
-      var blog = WP.open('http://news.rothpractice.com');
-      blog.posts().all(function(posts){
-        for(var i = 0; i < posts.length; i++){
-          console.log(posts);
-          jQuery('.'+MYWRAPPER_CLASS).append(function(){
-            return (posts[i].thumbnail) ? '<a class="lastpost_title" href="'+posts[i].url+'"><h4>'+posts[i].title+'</h4></a><a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<a href="'+posts[i].url+'"><h4>'+posts[i].title+'</h4></a>' + '<p>'+posts[i].excerpt+'</p>';
-       
-          });
-        }
-      });
-
-
-      //formspree ajax
-      var $contactForm = $('#contact-form');
-      $contactForm.submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-          url: '//formspree.io/burke.cf@gmail.com',
-          method: 'POST',
-          data: $(this).serialize(),
-          dataType: 'json',
-          beforeSend: function() {
-            $contactForm.append('<div class="alert alert--loading">Sending message…</div>');
-          },
-          success: function(data) {
-            $contactForm.find('.alert--loading').hide();
-            $contactForm.append('<div class="alert alert--success">Message sent!</div>');
-          },
-          error: function(err) {
-            $contactForm.find('.alert--loading').hide();
-            $contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
-          }
-        });
-      });
+      div.container
+        div.grid
+            div.column.size12of12
+              include navigation.jade
+              section.copy
+                p &copy; #{ new Date().getFullYear() } #{ locals.owner } All rights reserved
+    block scripts
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+      script.
+          var $buoop = {c:2}; 
+          function $buo_f(){ 
+           var e = document.createElement("script"); 
+           e.src = "//browser-update.org/update.js"; 
+           document.body.appendChild(e);
+          };
+          try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+          catch(e){window.attachEvent("onload", $buo_f)}
 

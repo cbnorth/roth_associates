@@ -1,0 +1,142 @@
+// Mixins ======================================================================================== /
+
+@import 'variables';
+
+// ----- CLEARFIX available via mixin or (preferred) by extending the class
+
+@mixin clearfix {
+  &:before, &:after { content: ""; display: table; }
+  &:after { clear: both; }
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+}
+}
+
+%hidden_visually {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+}
+
+@mixin breakpoint($break) {
+    @if $break == sm {
+        @media (min-width: $sm) { 
+            @content; 
+        }
+    }
+    @else if $break == med {
+        @media (min-width: $med) { 
+            @content; 
+        }
+    }
+    @else if $break == lg {
+        @media (min-width: $lg) { 
+            @content; 
+        }
+    }
+    @else if $break == xl {
+        @media (min-width: $xl) { 
+            @content; 
+        }
+    }
+}
+
+@function getGutterWidth($prefix) {
+    @if $prefix == sm {
+        @return $gutter-width-sm;
+    }
+    @else if $prefix == med {
+        @return $gutter-width-med;
+    }
+    @else if $prefix == lg {
+        @return $gutter-width-lg;
+    }
+    @else if $prefix == xl {
+        @return $gutter-width-xl;
+    }
+}
+
+@function calculateRem($size) {
+    $remSize: $size / 10px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin transform ($transforms) {
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin filter ($filters) {
+    -webkit-filter: $filters;
+    -moz-filter: $filters;
+    -o-filter: $filters;
+    -ms-filter: $filters;
+    filter: $filters;
+}
+
+@mixin transition ($value...) {
+    -webkit-transition: $value;
+    transition: $value;
+}
+
+@mixin border_box_sizing ($box_sizing:border-box) {
+    -webkit-box-sizing: $box_sizing;
+    -moz-box-sizing: $box_sizing;
+    box-sizing: $box_sizing;
+}
+
+@mixin slide_caption_alternate {
+    margin-left: 15%;
+    float: left;
+    background: rgba(255,255,255,0.7);
+    padding: 0 20px 0 0;
+    width: auto;
+    position: absolute;
+    bottom: 100px;
+
+    p {
+        margin: 0;
+        padding: 9px 0 9px 20px;
+        font-size: 18px;
+        max-width: 100%;
+    }
+}
+
+@mixin dark_sharing {
+    label {
+        border-color: $dark_background;
+
+        span {
+            color: $copy_color;
+        }
+
+        &.hide_button:after {
+            color: $copy_color;
+        }
+    }
+}
+
+@function columns($columns, $container-columns: $grid-columns) {
+  $width: $columns * $column-width;
+  $container-width: $container-columns * $column-width;
+  @return percentage($width / $container-width);
+}

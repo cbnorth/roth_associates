@@ -1,29 +1,48 @@
 extends layout
 
 block content
-  include author
-  each article in articles
-    article.article.intro
-      header
-        p.date
-          span= moment.utc(article.date).format('DD. MMMM YYYY')
-        h2
-          a(href=article.url)= article.title
-      section.content
-        if article.intro.length > 0
-          != typogr(article.intro).typogrify()
-        if article.hasMore
-          p.more
-            a(href=article.url) more
+  div.container
+    div.grid
+      h1 home page
+  section.content_slot
+    div.container
+      div.grid
+        div.column.size12of12.med_size4of12
+          h3 Blog
+          div.latest_blog
+            img(src="/assets/images/ajax-loader.gif")
+        div.column.size12of12.med_size4of12
+          h3 Associates
+          h4 Our Associates are here to help.
+          p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+          a more about us
+        div.column.size4of12.slot_image
 
-block prepend footer
-  div.nav
-    if prevPage
-      a(href=prevPage.url) « Newer
-    else
-      a(href='/archive.html') « Archives
-    if nextPage
-      a(href=nextPage.url) Next page »
+block append scripts
+  script.
+      var MYBLOG_LIMIT = 1;
+      var MYWRAPPER_CLASS = 'latest_blog';
+ 
+      var WP={open:function(b){var a={posts:function(){var d=MYBLOG_LIMIT;var e=0;var c={all:function(g){var f=b+"/api/get_recent_posts/";f+="?count="+d+"&page="+e+"&callback=?";jQuery.getJSON(f,function(l){var k=l.posts;for(var j=0;j<k.length;j++){var h=k[j];h.createComment=function(i,m){i.postId=h.id;a.comments().create(i,m)}}g(k)})},findBySlug:function(f,h){var g=b+"/api/get_post/";g+="?slug="+f+"&callback=?";jQuery.getJSON(g,function(i){h(i.post)})},limit:function(f){d=f;return c},page:function(f){e=f;return c}};return c},pages:function(){var c={findBySlug:function(d,f){var e=b+"/api/get_page/";e+="?slug="+d+"&callback=?";jQuery.getJSON(e,function(g){f(g.page)})}};return c},categories:function(){var c={all:function(e){var d=b+"/api/get_category_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.categories)})}};return c},tags:function(){var c={all:function(e){var d=b+"/api/get_tag_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.tags)})}};return c},comments:function(){var c={create:function(f,e){var d=b+"/api/submit_comment/";d+="?post_id="+f.postId+"&name="+f.name+"&email="+f.email+"&content="+f.content+"&callback=?";jQuery.getJSON(d,function(g){e(g)})}};return c}};return a}};
+ 
+      var blog = WP.open('http://news.rothpractice.com');
+      blog.posts().all(function(posts){
+        for(var i = 0; i < posts.length; i++){
+          jQuery('.'+MYWRAPPER_CLASS).html(function(){
+            return (posts[i].thumbnail) ? '<a class="lastpost_title" href="'+posts[i].url+'"><h4>'+posts[i].title+'</h4></a><a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<a href="'+posts[i].url+'" class="fade_in"><h4>'+posts[i].title+'</h4></a>' + '<p class="fade_in">'+posts[i].excerpt+'</p>';
+          });
+        }
+      });
+
+      $(".latest_blog").bind("DOMSubtreeModified", function() {
+          setTimeout(function() {
+            $(".latest_blog").addClass('active');
+          }, 100);
+      });
+
+
+
+  
 
 
 

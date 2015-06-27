@@ -1,21 +1,19 @@
 {
   "output": "../",
   "locals": {
-    "url": "http://localhost:8080",
+    "url": "/",
     "name": "The Wintersmith's blog",
-    "owner": "Someone",
-    "description": "Ramblings of an immor(t)al demigod"
+    "owner": "Roth & Associates",
+    "description": "lorem ipsum description"
   },
-  "plugins": [
-    "./plugins/paginator.coffee"
-  ],
   "require": {
     "moment": "moment",
     "_": "underscore",
     "typogr": "typogr"
   },
   "jade": {
-    "pretty": true
+    "pretty": true,
+    "basedir": "contents"
   },
   "markdown": {
     "smartLists": true,
