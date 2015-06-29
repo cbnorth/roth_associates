@@ -1,0 +1,107 @@
+.home_page {
+    #logo {
+        background-position: 0 0;
+    }
+    @include breakpoint(med) {
+        header {
+            background: transparent;
+
+            nav {
+                li {
+                    a {
+                        color: $alt_copy_color;
+
+                        &:hover {
+                            color: $hover;
+                        }
+                    }
+                }
+            }
+        }
+
+        #content {
+            margin-top: 0;
+        }
+    }
+}
+
+.hero {
+    background-image:url(/assets/images/home-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: 50% 0;
+    position: relative;
+    padding-bottom: 72%;
+
+    @include breakpoint(med) {
+        padding-bottom: 36.5%;
+        background-size: 100%;
+        background-position: 0 0;
+    }
+}
+
+.hero_copy {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 21%;
+
+    h2 {
+        @include font-size(36px);
+        color: $alt_copy_color;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+        width: 100%;
+        text-align: center;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .link {
+        width: 100%;
+        display: block;
+        text-align: center;
+        color: $alt_copy_color;
+        margin-top: 5px;
+        @include font-size(12px);
+    }
+
+    @media screen and (min-width: 570px) {
+        bottom: 21%;
+    }
+
+    @media screen and (min-width: 600px) {
+        bottom: 21%;
+    }
+
+    @include breakpoint(med) {
+        bottom: 21%;
+        h2 {
+            @include font-size(55px);
+        }
+
+        .link {
+            @include font-size(14px);
+        }
+    }
+
+    @include breakpoint(lg) {
+        bottom: 21%;
+    }
+}
+
+.latest_blog a {
+    text-decoration: none;
+}
+
+.slot_image {
+    display: none;
+    background-image:url(/assets/images/slot-image-temp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 48%;
+
+    @include breakpoint(lg) {
+        display: inline-block;
+    }
+}

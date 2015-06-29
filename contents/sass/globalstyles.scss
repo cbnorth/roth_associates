@@ -110,18 +110,25 @@ li {
 }
 
 #logo {
-    background-image:url(/assets/images/logo-blue.png);
+    background-image:url(/assets/images/logo.png);
     background-repeat: no-repeat;
+    background-position: 0 100%;
     text-indent: -9999px;
     background-size: 100%;
     float: left;
-    height: 73px;
-    width: 191px;
-    margin: 25px 0;
+    height: 49px;
+    width: 130px;
+    margin: 18px 0;
     display: none;
+    @include transition(all .2s ease-in-out);
 
     @include breakpoint(med) {
         display: block;
+    }
+
+    @include breakpoint(lg) {
+        height: 73px;
+        width: 191px;
     }
 
     a {
@@ -188,6 +195,10 @@ nav {
 header {
     background-color: $primary_background;
     padding: 15px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 
     .mobile_nav_button {
         display: block;
@@ -213,10 +224,11 @@ header {
     }
 
     nav {
-        display: none;
+        height: 0;
         opacity: 0;
         visibility: hidden;
-        @include transition(opacity .3s ease-in-out);
+        @include transition(none);
+        @include transform(scale(.98));
         ul {
             text-align: center;
             li {
@@ -232,25 +244,31 @@ header {
         }
 
         &.active {
-            display: block;
+            height: auto;
             opacity: 1;
             visibility: visible;
             margin-top: 12px;
+            @include transform(scale(1));
+            @include transition(all .3s ease-in-out);
         }
     }
 
     @include breakpoint(med) {
         background-color: #fff;
+        padding:0;
+        position: absolute;
 
         .mobile_nav_button {
             display: none;
         }
 
         nav {
-            display: block;
-            clear: left;
             opacity: 1;
             visibility: visible;
+            clear: none;
+            float: left;
+            padding-left: 55px;
+            padding-top: 41px;
 
             ul {
                 text-align: left;
@@ -259,7 +277,7 @@ header {
                     width: auto;
 
                     a {
-                        padding-right: 35px;
+                        padding-right: 20px;
                         color: $copy_color;
                     }
                 }
@@ -268,12 +286,59 @@ header {
     }
 
     @include breakpoint(lg) {
-        nav {
-            clear: none;
-            float: left;
-            padding-left: 55px;
-            padding-top: 41px;
+        nav ul li a {
+            padding-right: 35px;
         }
+    }
+}
+
+#content {
+    margin-top: 54px;
+
+    @include breakpoint(med) {
+        margin-top: 110px;
+    }
+}
+
+.content_slot {
+
+    &.dark_background{
+        background-color: $primary_background;
+        
+        h3 {
+            @extend .heavy;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            color: $headline_color;
+            @include font-size(34px);
+            font-weight: normal;
+            position: relative;
+            margin: 0 0 45px 0;
+            &:after {
+                content: "";
+                display: block;
+                width: 70%;
+                height: 2px;
+                background: #fff;
+                position: absolute;
+                left: 0;
+                bottom: -23px;
+            }
+        }
+
+        h3, p, a{
+            color: $alt_copy_color;
+        } 
+    }
+}
+
+.inner_slot_content {
+    padding: 50px 0 0 0;
+    @include breakpoint(med) {
+        max-width: 90%;
+        padding: 50px 0;
     }
 }
 
@@ -341,4 +406,20 @@ footer {
 
 a {
     @include transition(color .3s ease-in-out);
+    color: $copy_color;
+
+    &.link{
+        text-transform: uppercase;
+        text-decoration: underline;
+        @extend .heavy;
+        @include font-size(14px);
+
+        &:hover {
+            color: $hover;
+        }
+    }
+
+    &:hover {
+        color: $hover;
+    }
 }

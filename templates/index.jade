@@ -4,21 +4,27 @@ block beforeBody
   - bodyClasses.push('home_page')
 
 block content
-  div.container
-    div.grid
-      h1 home page
-  section.content_slot
+  section.hero
     div.container
       div.grid
-        div.column.size12of12.med_size4of12
-          h3 Blog
-          div.latest_blog
-            img(src="/assets/images/ajax-loader.gif")
-        div.column.size12of12.med_size4of12
-          h3 Associates
-          h4 Our Associates are here to help.
-          p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-          a more about us
+        div.column.size12of12.hero_copy
+          h2 we're all in
+          a(href="/contact").link Contact us today
+  section.content_slot.dark_background
+    div.container
+      div.grid
+        div.column.size12of12.med_size6of12.lg_size4of12
+          div.inner_slot_content
+            h3 Blog
+            div.latest_blog
+              img(src="/assets/images/ajax-loader.gif")
+            a(href="http://news.rothpractice.com").link read more
+        div.column.size12of12.med_size6of12.lg_size4of12
+          div.inner_slot_content
+            h3 Associates
+            h4 Our Associates are here to help.
+            p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+          a(href="/associates").link more about us
         div.column.size4of12.slot_image
 
 block append scripts
