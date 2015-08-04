@@ -406,6 +406,8 @@ footer {
             text-transform: capitalize;
             z-index: 2;
             letter-spacing: 4px;
+            margin-bottom: 29px;
+
 
             &:after {
                 content: "";
@@ -415,7 +417,7 @@ footer {
                 background-color: #fff;
                 height: 2px;
                 left: 0;
-                bottom: -10px;
+                bottom: -15px;
             }
         }
         
