@@ -2,9 +2,9 @@
   "output": "../",
   "locals": {
     "url": "/",
-    "name": "The Wintersmith's blog",
+    "name": "Roth Associates, attorneys that put you first",
     "owner": "Roth & Associates",
-    "description": "lorem ipsum description"
+    "description": "With locations across the country we're there when you need us."
   },
   "require": {
     "moment": "moment",

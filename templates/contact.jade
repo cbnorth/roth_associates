@@ -5,10 +5,14 @@ block beforeBody
 
 block content
     section
-        div.container
+        div#map_wrapper
+          div#map_canvas
+        div.container.content_slot
             div.grid
                 div.column.size12of12
-                    h1 contact
+                    h1 Contact us
+                    p.mobile_only With locations across the country we are available wherever you are, whenever you need us.
+                div.column.size12of12.med_size6of12
                     form#contact-form(action="//formspree.io/burke.cf@gmail.com" method="post")
                         input(type="text" name="Name" placeholder="Name" required)
                         input(type="email" name="Email" placeholder="Email" required)
@@ -17,30 +21,10 @@ block content
                         input(class="gotcha" type="text" name="_gotcha")
                         input(type="hidden" name="_subject" value="Subject")
                         <!-- /CONFIG -->
-                        input(class="submit" type="submit" value="Send")
+                        div.ui_button_container
+                            input(class="ui_button" type="submit" value="Send your message")
+                div.column.size6of12.contact_statement
+                    p.statement With locations across the country we are available wherever you are, whenever you need us.
 
 block append scripts
-    script.
-      //formspree ajax
-      var $contactForm = $('#contact-form');
-      $contactForm.submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-          url: '//formspree.io/burke.cf@gmail.com',
-          method: 'POST',
-          data: $(this).serialize(),
-          dataType: 'json',
-          beforeSend: function() {
-            $contactForm.append('<div class="alert alert--loading">Sending message…</div>');
-          },
-          success: function(data) {
-            $contactForm.find('.alert--loading').hide();
-            $contactForm.fadeOut();
-            $contactForm.after('<div class="alert alert--success">Message sent!</div>');
-          },
-          error: function(err) {
-            $contactForm.find('.alert--loading').hide();
-            $contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
-          }
-        });
-      });
+  script(src='/scripts/google_maps.js')

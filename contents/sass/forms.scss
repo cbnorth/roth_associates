@@ -1,3 +1,4 @@
+
 input[type="text"], input[type="email"], textarea, select {
     border: 1px solid #DADADA;
     color: #888;
@@ -7,11 +8,8 @@ input[type="text"], input[type="email"], textarea, select {
     margin-top: 2px;
     outline: 0 none;
     padding: 3px 3px 3px 5px;
-    font-size: 12px;
+    @include font-size(16px);
     line-height:15px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
 }
 
 input, textarea, select {

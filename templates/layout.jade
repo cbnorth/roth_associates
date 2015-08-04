@@ -26,14 +26,8 @@ html(lang='en')
               include navigation.jade
     div#content
       block content
-    footer
-      div.container
-        div.grid
-            div.column.size12of12.footer_content
-              div.footer_links
-                include navigation.jade
-                p.copyright &copy; #{ new Date().getFullYear() } #{ locals.owner }
-                  span All rights reserved
+    
+    include footer
     block scripts
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
       script.

@@ -38,19 +38,12 @@ module.exports = function(grunt) {
                 }
             }
         },
-        uglify: {
-            my_target: {
-                files: {
-                    'contents/scripts/script.min.js': ['contents/scripts/script.js']
-                },
-                sourceMap: true
-            }
-        },
         sync: {
             copy_resources: {
                 files: [
                     { cwd: 'contents', src: 'css/**', dest: '../' },
-                    { cwd: 'contents', src: 'scripts/script.min.js', dest: '../' }
+                    { cwd: 'contents', src: 'scripts/**', dest: '../' },
+                    { cwd: 'contents', src: 'assets/images/**', dest: '../' },
                 ]
             }
         },
@@ -70,13 +63,13 @@ module.exports = function(grunt) {
                 files: '**/*.css',
                 tasks: ['sync']
             },
-            dev: {
-                files: ['contents/scripts/*.js', '!contents/scripts/script.min.js'],
-                tasks: ["browserify"]
+            images: {
+                files: 'contents/assets/images/**',
+                tasks: ['sync']
             },
             js: {
-                files: 'contents/scripts/script.js',
-                tasks: ['uglify']
+                files: 'contents/scripts/**',
+                tasks: ['sync']
             },
             min: {
                 files: 'contents/scripts/script.min.js',
@@ -85,6 +78,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask("default", ["connect", "wintersmith", "sass", "uglify", "sync", "watch"]);
+    grunt.registerTask("default", ["connect", "wintersmith", "sass", "sync", "watch"]);
 
 }
