@@ -50,16 +50,24 @@ h1 {
     font-weight: normal;
     color: $headline_color;
     @include font-size(45px);
+    margin-bottom: 0px;
 
     @include breakpoint(med) {
         @include font-size(50px);
     }
 }
 
+h2 {
+    @include font-size(23px);
+    margin-top: 7px;
+    font-weight: normal;
+}
+
 p {
     font-family: $primary_font;
     @include font-size(16px);
     line-height: 35px;
+    margin-top: 0;
 }
 
 li {
