@@ -3,24 +3,59 @@ body.about_lp {
 }
 
 .page_nav {
-    margin: 35px 0 85px 0;
+    margin: 35px 0 50px 0;
+
+    ul {
+        width: 100%;
+        background-color: #fff;
+        height: 45px;
+        overflow: hidden;
+        position: relative;
+
+        li {
+            display: block;
+            width: 100%;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+        }
+    }
 
     a {
-        position: relative;
-        display: block;
-        width: auto;
-        margin-right: 35px;
+        margin: 0;
         padding: 0;
+    }
 
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            left: 0;
-            bottom: -2px;
-            background-color: $dark_background;
+    &.active {
+        ul {
+            height: auto;
+        }
+    }
+
+
+    @include breakpoint(med) {
+        margin: 35px 0 85px 0;
+        
+        li {
+            margin-right: 35px;
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            padding: 0;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                bottom: -2px;
+                background-color: $dark_background;
+            }
         }
     }
 }
