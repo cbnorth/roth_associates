@@ -4,6 +4,30 @@ body.about_lp {
 
 .page_nav {
     margin: 35px 0 50px 0;
+    position: relative;
+    height: 45px;
+
+    div.page_nav_container {
+        position: absolute;
+        height: 45px;
+        width: 100%;
+        cursor: pointer;
+
+        &:after {
+            content: "\203A";
+            font-family: $secondary_font;
+            position: absolute;
+            top: -8px;
+            right: 20px;
+            font-size: 50px;
+            @include transform(rotate(90deg));
+            z-index: 20;
+        }
+
+        &:hover:after {
+            color: $active_link;
+        }
+    }
 
     ul {
         width: 100%;
@@ -27,17 +51,38 @@ body.about_lp {
     }
 
     &.active {
-        ul {
+        .page_nav_container, ul {
             height: auto;
+            z-index: 10;
+        }
+
+        .page_nav_container:after {
+            @include transform(rotate(-90deg));
         }
     }
 
 
     @include breakpoint(med) {
         margin: 35px 0 85px 0;
+
+        .page_nav_container {
+            position: static;
+            height: auto;
+
+            &:after {
+                content: "" !important;
+            }
+        }
         
-        li {
-            margin-right: 35px;
+        ul {
+            background-color: transparent;
+            height: auto;
+
+            li {
+                margin-right: 35px;
+                display: inline-block;
+                width: auto;
+            }
         }
 
         a {

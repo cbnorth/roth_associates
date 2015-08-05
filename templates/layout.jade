@@ -40,8 +40,15 @@ html(lang='en')
           };
           try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
           catch(e){window.attachEvent("onload", $buo_f)}
+  
 
+          //to-do: clean up this js and place it in a file
           $('.mobile_nav_button').click(function(){
             $('header nav').toggleClass('active');
           });
+
+          $('.page_nav').click(function() {
+              $(this).toggleClass('active');
+          });
+
 
