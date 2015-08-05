@@ -1,5 +1,28 @@
+body.about_lp {
+    background-color: $light_background;
+}
+
 .page_nav {
     margin: 35px 0 85px 0;
+
+    a {
+        position: relative;
+        display: block;
+        width: auto;
+        margin-right: 35px;
+        padding: 0;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: -2px;
+            background-color: $dark_background;
+        }
+    }
 }
 
 .background_photos {
@@ -48,6 +71,10 @@
         padding: 0 7%;
         text-align: center;
         display: block;
+    }
+
+    ul {
+        @extend .list_style
     }
 }
 

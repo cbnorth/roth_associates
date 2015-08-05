@@ -55,6 +55,10 @@ module.exports = function(grunt) {
                 files: '**/*.jade',
                 tasks: ['wintersmith']
             },
+            md: {
+                files: '**/*.md',
+                tasks: ['wintersmith']
+            },
             scss: {
                 files: '**/*.scss',
                 tasks: ['sass']
