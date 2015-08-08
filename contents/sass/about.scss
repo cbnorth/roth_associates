@@ -2,56 +2,58 @@ body.about_lp {
     background-color: $light_background;
 }
 
-.background_photos {
-    padding-bottom: 85%;
-    background-repeat: no-repeat;
-    position: relative;
+.about_lp {
+    .background_photos {
+        padding-bottom: 85%;
+        background-repeat: no-repeat;
+        position: relative;
 
-    h3 {
-        position: absolute;
-        top: 17px;
-        left: 25px;
-        @include font-size(39px);
-        color: #fff;
-        margin: 0;
-    }
-
-    @include breakpoint(med) {
-        padding-bottom: 32%;
-    }
-}
-
-.value_photo {
-    @extend .background_photos;
-    &.first {
-        background-image:url(/assets/images/value-photo1.jpg);
-    }
-    &.second {
-        display: none;
-        background-image:url(/assets/images/value-photo1.jpg);
-
+        h3 {
+            position: absolute;
+            top: 17px;
+            left: 25px;
+            @include font-size(39px);
+            color: #fff;
+            margin: 0;
+        }
 
         @include breakpoint(med) {
-            display: inline-block;
+            padding-bottom: 32%;
         }
     }
-}
 
-.discription_copy {
-    @include font-size(16px);
-    line-height: 21px;
-    margin: 35px 0 100px 0;
+    .value_photo {
+        @extend .background_photos;
+        &.first {
+            background-image:url(/assets/images/value-photo1.jpg);
+        }
+        &.second {
+            display: none;
+            background-image:url(/assets/images/value-photo1.jpg);
 
-    @include breakpoint(med) {
-        line-height: 25px;
-        margin: 35px auto 100px auto;
-        padding: 0 7%;
-        text-align: center;
-        display: block;
+
+            @include breakpoint(med) {
+                display: inline-block;
+            }
+        }
     }
 
-    ul {
-        @extend .list_style
+    .discription_copy {
+        @include font-size(16px);
+        line-height: 21px;
+        margin: 35px 0 100px 0;
+
+        @include breakpoint(med) {
+            line-height: 25px;
+            margin: 35px auto 100px auto;
+            padding: 0 7%;
+            text-align: center;
+            display: block;
+        }
+
+        ul {
+            @extend .list_style
+        }
     }
 }
 
