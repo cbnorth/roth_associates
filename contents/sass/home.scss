@@ -44,12 +44,12 @@
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 21%;
+    bottom: 25%;
 
     h2 {
         @include font-size(36px);
         color: $alt_copy_color;
-        font-variant: small-caps;
+        text-transform: capitalize;
         letter-spacing: 2px;
         width: 100%;
         text-align: center;
@@ -67,15 +67,11 @@
     }
 
     @media screen and (min-width: 570px) {
-        bottom: 21%;
-    }
-
-    @media screen and (min-width: 600px) {
-        bottom: 21%;
+        bottom: 35%;
     }
 
     @include breakpoint(med) {
-        bottom: 21%;
+        bottom: 25%;
         h2 {
             @include font-size(55px);
         }
@@ -84,9 +80,80 @@
             @include font-size(14px);
         }
     }
+}
 
-    @include breakpoint(lg) {
-        bottom: 21%;
+.major_underline {
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 80%;
+        bottom: -28px;
+        left: 10%;
+        background-color: white;
+    }
+
+    &.dark_underline:after {
+        background-color: $dark_background;
+    }
+}
+
+.statement_copy {
+    padding: 40px 0;
+    text-align: center;
+    h1 {
+        @include font-size(35px);
+        color: $alt_headline_clolor;
+        @extend .major_underline;
+        
+    }
+
+    p {
+        @include font-size(22px);
+        margin-top: 51px;
+        text-transform: uppercase;
+    }
+
+    @include breakpoint(sm) {
+        width: 540px;
+        margin: 40px auto;
+    }
+
+    @include breakpoint(med) {
+        h1 {
+            @include font-size(44px);
+        }
+    }
+}
+
+.secondary_statement_copy {
+    text-align: center;
+    padding: 40px 20px;
+
+    h1 {
+        @include font-size(33px);
+        @extend .major_underline;
+
+        &:after {
+            background-color: $dark_background;
+            height: 1px;
+        }
+    }
+
+    h2 {
+        margin-top: 40px;
+        text-transform: uppercase;
+        @include font-size(22px);
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+
+    a {
+        margin-top: 35px;
+        display: block;
     }
 }
 
