@@ -18,19 +18,20 @@ block content
             artcile 
               h1 When you want someone who cares enough to fight for you &amp; your family.
               p Est. 1987
-  section.content_slot
+  section.content_slot.slot_image_container
     div.container
       div.grid
-        div.column.size12of12.med_size12of12.lg_size8of12
+        div.column.size12of12.med_size12of12.lg_size7of12
           div.copy_container.secondary_statement_copy
             article
               h1 We are hailed as one of the top personal injury law firms.
               h2 our values set us apart, &amp; our work shows it.
               a(href="about").link learn more
-        div.column.size4of12.slot_image
+        div.column.size5of12.slot_image
   section.content_slot.dark_background
     div.container
       div.grid
+        div.featured_video
         div.column.size12of12.med_size8of12
           div.inner_slot_content
             h3 Blog
@@ -42,6 +43,7 @@ block append scripts
   script.
       var MYBLOG_LIMIT = 1;
       var MYWRAPPER_CLASS = 'latest_blog';
+      var videoContainer = 'featured_video';
  
       var WP={open:function(b){var a={posts:function(){var d=MYBLOG_LIMIT;var e=0;var c={all:function(g){var f=b+"/api/get_recent_posts/";f+="?count="+d+"&page="+e+"&callback=?";jQuery.getJSON(f,function(l){var k=l.posts;for(var j=0;j<k.length;j++){var h=k[j];h.createComment=function(i,m){i.postId=h.id;a.comments().create(i,m)}}g(k)})},findBySlug:function(f,h){var g=b+"/api/get_post/";g+="?slug="+f+"&callback=?";jQuery.getJSON(g,function(i){h(i.post)})},limit:function(f){d=f;return c},page:function(f){e=f;return c}};return c},pages:function(){var c={findBySlug:function(d,f){var e=b+"/api/get_page/";e+="?slug="+d+"&callback=?";jQuery.getJSON(e,function(g){f(g.page)})}};return c},categories:function(){var c={all:function(e){var d=b+"/api/get_category_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.categories)})}};return c},tags:function(){var c={all:function(e){var d=b+"/api/get_tag_index/";d+="?callback=?";jQuery.getJSON(d,function(f){e(f.tags)})}};return c},comments:function(){var c={create:function(f,e){var d=b+"/api/submit_comment/";d+="?post_id="+f.postId+"&name="+f.name+"&email="+f.email+"&content="+f.content+"&callback=?";jQuery.getJSON(d,function(g){e(g)})}};return c}};return a}};
  
@@ -59,6 +61,16 @@ block append scripts
             $(".latest_blog").addClass('active');
           }, 100);
       });
+
+      var video = WP.open('http://news.rothpractice.com');
+      blog.pages().all(function(pages){
+        for(var i = 0; i < pages.length; i++){
+          jQuery('.'+videoContainer).html(function(){
+            return (posts[i].thumbnail) ? '<a class="lastpost_title" href="'+posts[i].url+'"><h4>'+posts[i].title+'</h4></a><a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<a href="'+posts[i].url+'" class="fade_in"><h4>'+posts[i].title+'</h4></a>' + '<p class="fade_in">'+posts[i].excerpt+'</p>';
+          });
+        }
+      });
+
 
 
 
