@@ -16,7 +16,7 @@ block content
         div.column.size12of12
           div.copy_container.statement_copy
             artcile 
-              h1 When you want someone who cares enough to fight for you &amp; your family.
+              h1.has_underline When you want someone who cares enough to fight for you &amp; your family.
               p Est. 1987
   section.content_slot.slot_image_container
     div.container
@@ -28,7 +28,19 @@ block content
               h2 our values set us apart, &amp; our work shows it.
               a(href="about").link learn more
         div.column.size5of12.slot_image
-  section.content_slot.dark_background
+
+  section.content_slot.dark_background.practices
+    div.container
+      div.grid
+        div.column.size12of12
+          div.copy_container.statement_copy
+            h1 <span>/ Practices</span> We will work for you headline goes right here.
+            div.practice_link.motor
+              a.link(href="/practices#motor_accident") Motor Accident
+            a.practices_link.medical.link(href="/practices#medical_malpractice") Medical Malpractice
+            a.practices_link.product.link(href="/practices#product_liability") Product Liability
+            a.practices_link.premises.link(href="/practices#premises_liability") Premises Liability
+  section.content_slot
     div.container
       div.grid
         div.featured_video
@@ -60,15 +72,6 @@ block append scripts
           setTimeout(function() {
             $(".latest_blog").addClass('active');
           }, 100);
-      });
-
-      var video = WP.open('http://news.rothpractice.com');
-      blog.pages().all(function(pages){
-        for(var i = 0; i < pages.length; i++){
-          jQuery('.'+videoContainer).html(function(){
-            return (posts[i].thumbnail) ? '<a class="lastpost_title" href="'+posts[i].url+'"><h4>'+posts[i].title+'</h4></a><a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<a href="'+posts[i].url+'" class="fade_in"><h4>'+posts[i].title+'</h4></a>' + '<p class="fade_in">'+posts[i].excerpt+'</p>';
-          });
-        }
       });
 
 
