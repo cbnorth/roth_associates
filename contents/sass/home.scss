@@ -120,7 +120,8 @@
         }
 
         @include breakpoint(sm) {
-            width: 540px;
+            width: 100%;
+            max-width: 540px;
             margin: 40px auto;
         }
 
@@ -132,9 +133,13 @@
         }
     }
 
-    .practices {
+    section.practices {
+        padding-bottom: 50px;
         h1 {
-            margin-top: 0;
+            margin: 0 0 30px 0;
+            height: 50px;
+            overflow: hidden;
+
             span {
                 display: block;
                 color: inherit;
@@ -145,25 +150,74 @@
             &:after {
                 content: none;
             }
+
+            @include breakpoint(med) {
+                height: auto;
+                overflow: visible;
+                margin-bottom: 0;
+            }
         }
 
-        .practices_link {
+        .practice_link {
             width: 50%;
             position: relative;
             display: block;
+            float: left;
+            height: 123px;
+            margin-bottom: 37px;
 
-            &:before {
+            &:after {
                 content: '';
                 display: block;
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 200px;
-                background-image:url(/assets/images/practices-sprite.png);
-                background-size: 200px;
+                height: 90px;
+                background-image: url(/assets/images/practices-sprite.png);
+                background-size: 98px;
                 background-repeat: no-repeat;
-                background-position: center;
+                background-position: center 0;
+            }
+
+            &.motor:after {
+                height: 61px;
+                background-position: center 0;
+            }
+
+            &.medical:after {
+                height: 63px;
+                background-position: center -74px;
+            }
+
+            &.product:after {
+                height: 65px;
+                background-position: center -157;
+            }
+
+            &.premises:after {
+                height: 73px;
+                background-position: center -236;
+            }
+
+            .link {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                text-align: center;
+                word-spacing: 1000px;
+                line-height: 21px;
+            }
+
+            span.link {
+                color: #fff;
+                text-decoration: underline;
+            }
+
+            @include breakpoint(med) {
+                width: 25%;
+                margin-top: 0;
             }
         }
     }
@@ -210,6 +264,19 @@
                 width: 78%;
                 margin: 53px 11%;
             }
+        }
+    }
+
+    section.blog {
+        padding-bottom: 50px;
+        h1 {
+            @include font-size(24px);
+            color: $alt_headline_clolor
+        }
+
+        h2 {
+            margin: 20px 0;
+            @include font-size(34px);
         }
     }
 

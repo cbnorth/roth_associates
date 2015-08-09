@@ -35,18 +35,20 @@ block content
         div.column.size12of12
           div.copy_container.statement_copy
             h1 <span>/ Practices</span> We will work for you headline goes right here.
-            div.practice_link.motor
-              a.link(href="/practices#motor_accident") Motor Accident
-            a.practices_link.medical.link(href="/practices#medical_malpractice") Medical Malpractice
-            a.practices_link.product.link(href="/practices#product_liability") Product Liability
-            a.practices_link.premises.link(href="/practices#premises_liability") Premises Liability
-  section.content_slot
+          a.practice_link.motor.link(href="/practices#motor_accident")
+            span.link Motor Accident
+          a.practice_link.medical.link(href="/practices#medical_malpractice")
+            span.link Medical Malpractice
+          a.practice_link.product.link(href="/practices#product_liability") 
+            span.link Product Liability
+          a.practice_link.premises.link(href="/practices#premises_liability") 
+            span.link Premises Liability
+  section.content_slot.blog
     div.container
       div.grid
-        div.featured_video
-        div.column.size12of12.med_size8of12
+        div.column.size12of12.med_size6of12
           div.inner_slot_content
-            h3 Blog
+            h1 /Blog
             div.latest_blog
               img(src="/assets/images/ajax-loader.gif")
             a(href="http://news.rothpractice.com").link read more
@@ -63,7 +65,7 @@ block append scripts
       blog.posts().all(function(posts){
         for(var i = 0; i < posts.length; i++){
           jQuery('.'+MYWRAPPER_CLASS).html(function(){
-            return (posts[i].thumbnail) ? '<a class="lastpost_title" href="'+posts[i].url+'"><h4>'+posts[i].title+'</h4></a><a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<a href="'+posts[i].url+'" class="fade_in"><h4>'+posts[i].title+'</h4></a>' + '<p class="fade_in">'+posts[i].excerpt+'</p>';
+            return (posts[i].thumbnail) ? '<a class="lastpost_title" href="'+posts[i].url+'"><h2>'+posts[i].title+'</h2></a><a href="'+posts[i].url+'"><img src="'+posts[i].thumbnail+'"/></a>' : '<a href="'+posts[i].url+'" class="fade_in"><h2>'+posts[i].title+'</h2></a>' + '<p class="fade_in">'+posts[i].excerpt+'</p>';
           });
         }
       });
