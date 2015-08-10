@@ -7,4 +7,36 @@ block content
     section
         div.container
             div.grid
-                h1 Practices
+                div.column.size12of12
+                    h1 About Us
+                    h2 Roth &amp; Associates is a premier civil litigation law firm that offers clients a full range of legal services.
+
+                    nav.page_nav
+                        div.page_nav_container
+                            ul
+                                li 
+                                    a(href="#motor_accident") Motor Accident
+                                li 
+                                    a(href="#medical_malpractice") Medical Malpractice
+                                li 
+                                    a(href="#product_liability") Product Liability
+                                li 
+                                    a(href="#premises_liability") Premises Liability
+
+                article#motor_accident
+                    div.column.size12of12.discription_copy 
+                        include:markdown /practices/motor_accident.md
+
+                article#medical_malpractice
+                    div.column.size12of12.discription_copy 
+                        include:markdown /practices/medical_malpractice.md
+
+                article#product_liability
+                    div.column.size12of12.discription_copy 
+                        include:markdown /practices/product_liability.md
+
+                article#premises_liability
+                    div.column.size12of12.discription_copy 
+                        include:markdown /practices/premises_liability.md
+
+                        a(href="/contact").link Contact us today
