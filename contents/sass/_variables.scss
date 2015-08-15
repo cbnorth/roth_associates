@@ -23,7 +23,7 @@ $secondary_font: $nunito;
 
 
 // ----- GRID -----
-$max-width: 1600px; //true 1650px content column when accounting for container and column padding
+$max-width: 1250px; //true 1650px content column when accounting for container and column padding
 $grid-columns: 12;
 $column-width: ((1/$grid-columns)*100%);
 $gutter-width: 20px;

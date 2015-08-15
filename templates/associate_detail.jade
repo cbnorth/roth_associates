@@ -1,0 +1,32 @@
+extends layout
+
+block beforeBody
+  - bodyClasses.push('assocaite_detail_lp')
+
+block content
+  - var name = page.metadata.name
+  - var position = page.metadata.position
+  - var blurb = page.metadata.blurb
+  - var thumbnail = page.metadata.thumbnail
+  - var link = page.metadata.link
+  - var email = page.metadata.email
+    section
+        div.container
+            div.grid
+              div.column.size12of12.associate_header
+                h1= name
+                h2= position
+                a(href="mailto:#{email}").email
+              div.column.size12of12.headshot_container
+                img(src="/assets/images/#{thumbnail}")
+                a(href="mailto:#{email}").email
+              div.column.size12of12
+                != typogr(page.html).typogrify() 
+    section.content_slot.dark_background
+      div.container
+        div.grid
+          div.column.size12of12
+            div.copy_container.statement_copy
+              artcile 
+                h1 Our attorneys are qualified and experienced, passionate about what we do and accessible to all our clients. Your call gets returned promptly and almost always by an attorney. We take pride in keeping our clients fully informed about what is happening throughout the handling of their case.
+                a(href="/contact").link Contact us today
