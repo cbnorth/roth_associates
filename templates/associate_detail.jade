@@ -17,11 +17,37 @@ block content
                 h1= name
                 h2= position
                 a(href="mailto:#{email}").email
-              div.column.size12of12.headshot_container
+              div.column.size12of12.med_size4of12.headshot_container
                 img(src="/assets/images/#{thumbnail}")
-                a(href="mailto:#{email}").email
-              div.column.size12of12
+                a(href="mailto:#{email}").email.link email #{name}
+              div.column.size12of12.med_size6of12
                 != typogr(page.html).typogrify() 
+              div.column.size12of12
+                - var associates = _.chain(contents['associates']._.pages).sortBy(function(item){return item.metadata.order}).value()
+                - var n = 0
+                - var links = []
+                - var pre = page.metadata.order - 2
+                - var next = page.metadata.order
+                - var current = page.metadata.order
+                - var total = null
+                - var p = {current: current, total: total}
+                each associate in associates
+                  if associate.metadata.title !== undefined
+                    - var link = associate.metadata.link
+                    - links.push(link)
+                    - n++
+                    - total = links.length
+
+                - if (p.current > 1 && p.current < total)
+                  a(href="/associates/" + links[pre] + "").link.pre previous <span class="no_mobile">associate</span>
+                  a(href="/associates/" + links[next] + "").link.next next <span class="no_mobile">associate</span>
+                - else if (p.current > 1 && p.current == total)
+                  a(href="/associates/" + links[pre] + "").link.pre previous <span class="no_mobile">associate</span>
+                  a(href="/associates/" + links[0] + "").link.next next <span class="no_mobile">associate</span>
+                - else if (p.current == 1 && p.current < total)
+                  a(href="/associates/" + links[total-1] + "").link.pre previous <span class="no_mobile">associate</span>
+                  a(href="/associates/" + links[next] + "").link.next next <span class="no_mobile">associate</span>
+
     section.content_slot.dark_background
       div.container
         div.grid

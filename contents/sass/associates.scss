@@ -1,4 +1,4 @@
-body.associates_lp {
+body.associates_lp, body.assocaite_detail_lp {
     background-color: $light_background;
 }
 
@@ -12,6 +12,12 @@ body.associates_lp {
     }
     
     .assocaite {
+        h2 {
+            color: $alt_headline_clolor;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            @include font-size(20px);
+        }
         @media screen and (min-width: 450px) {
             width: 50%;
             float: left;
@@ -87,6 +93,7 @@ body.associates_lp {
 
     h1 {
         @include font-size(35px);
+        margin-top: 45px;
     }
 
     h2 {
@@ -101,6 +108,12 @@ body.associates_lp {
         margin-bottom: 30px;
     }
 
+    .email {
+        background-image: url(/assets/images/email_icon.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
     .associate_header {
         position: relative;
 
@@ -111,9 +124,27 @@ body.associates_lp {
             right: 10px;
             width: 28px;
             height: 25px;
-            background-image: url(/assets/images/email_icon.png);
-            background-size: 100%;
-            background-repeat: no-repeat;
+        }
+
+        @include breakpoint(med) {
+            .email {
+                display: none;
+            }
+        }
+    }
+
+    .headshot_container {
+        .email {
+            display: none;
+
+            @include breakpoint(med) {
+                display: block;
+                background-size: 37px;
+                padding-left: 50px;
+                width: auto;
+                padding-bottom: 0;
+                line-height: 32px;
+            }
         }
     }
 
@@ -144,6 +175,54 @@ body.associates_lp {
         @include breakpoint(med) {
             display: inline-block;
             width: 100%;
+        }
+    }
+
+    .link.pre, .link.next {
+        position: relative;
+        margin: 65px 0;
+        display: block;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: url(/assets/images/pagination-icons.png);
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 24px;
+            top: -2px;
+            background-size: 100%;
+        }
+    }
+
+    .link {
+        width: 50%;
+
+        span {
+            color: inherit;
+        }
+        &.pre {
+            padding-left: 32px;
+            text-align: left;
+            float: left;
+            
+
+            &:after {
+                left: 0px;
+                background-position: 0px -25px;
+            }
+        }
+
+        &.next {
+            padding-right: 32px;
+            text-align: right;
+            float: right;
+
+            &:after {
+                right: 0;
+                background-position: 0px 2px;
+            }
         }
     }
 }

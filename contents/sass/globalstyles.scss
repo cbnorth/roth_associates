@@ -211,6 +211,12 @@ nav {
     }
 }
 
+.associates_lp, .assocaite_detail_lp {
+    .associates a {
+        color: $active_link;
+    }
+}
+
 .about_lp {
     .about a {
         color: $active_link;
