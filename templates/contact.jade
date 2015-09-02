@@ -13,16 +13,18 @@ block content
                     h1 Contact us
                     p.mobile_only With locations across the country we are available wherever you are, whenever you need us.
                 div.column.size12of12.med_size6of12
-                    form#contact-form(action="//formspree.io/burke.cf@gmail.com" method="post")
-                        input(type="text" name="Name" placeholder="Name" required)
-                        input(type="email" name="Email" placeholder="Email" required)
-                        textarea(name="Message" cols="30" rows="6" placeholder="Message" required)
-                        <!-- CONFIG -->
-                        input(class="gotcha" type="text" name="_gotcha")
-                        input(type="hidden" name="_subject" value="Subject")
-                        <!-- /CONFIG -->
-                        div.ui_button_container
-                            input(class="ui_button" type="submit" value="Send your message")
+                    //- form#contact-form(action="//formspree.io/burke.cf@gmail.com" method="post")
+                    //-     input(type="text" name="Name" placeholder="Name" required)
+                    //-     input(type="email" name="Email" placeholder="Email" required)
+                    //-     textarea(name="Message" cols="30" rows="6" placeholder="Message" required)
+                    //-     <!-- CONFIG -->
+                    //-     input(class="gotcha" type="text" name="_gotcha")
+                    //-     input(type="hidden" name="_subject" value="Subject")
+                    //-     <!-- /CONFIG -->
+                    //-     div.ui_button_container
+                    //-         input(class="ui_button" type="submit" value="Send your message")
+                    a.email.contact_link(href="mailto:info@rothpractice.com") info@rothpractice.com
+                    p.phone.contact_link 713.654.2143
                 div.column.size6of12.contact_statement
                     p.statement With locations across the country we are available wherever you are, whenever you need us.
 

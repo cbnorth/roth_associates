@@ -9,7 +9,7 @@ block content
             div.grid
                 div.column.size12of12
                     h1 Our Associates
-                    h2 Roth &amp; Associates attorneys are qualified and experienced, passionate about what we do and accessible to all our clients. 
+                    h2 Roth and Associates attorneys are qualified and experienced, passionate about what we do and accessible to all our clients. 
                 div.column.size12of12
                     - var associates = _.chain(contents['associates']._.pages).sortBy(function(item){return item.metadata.order}).value()
                     - var i = 0
@@ -22,7 +22,7 @@ block content
                             - var link = associate.metadata.link
                             - i++
                             if associate.metadata.title !== undefined
-                                article.assocaite
+                                article.associate
                                     div.column.size_12of12.med_size4of12
                                         a(href="/associates/#{link}").headshot
                                             img(src="/assets/images/#{thumbnail}")

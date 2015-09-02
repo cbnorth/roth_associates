@@ -1,12 +1,48 @@
 .contact_lp {
-
+    background-color: $light_background;
     #map_wrapper {
         height: 400px;
+    }
+
+    h1 {
+        margin-bottom: 40px;
     }
 
     #map_canvas {
         width: 100%;
         height: 100%;
+    }
+
+    .contact_link {
+        @include font-size(23px);
+        font-family: $secondary_font;
+        line-height: 65px;
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .email:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        background-image: url(/assets/images/email_icon.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+    }
+
+    .phone:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        background-image: url(/assets/images/person_icon.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
     }
 
     .statement {
