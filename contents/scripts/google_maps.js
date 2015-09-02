@@ -38,7 +38,7 @@ function initialize() {
     var infoWindowContent = [
         ['<div class="info_content">' +
         '<h3>Houston Office</h3>' +
-        '<p>440 Louisiana St, Suite 1900<br>Houston, TX 77002<br> <a href="https://www.google.com/maps/place/440+Louisiana+St+%231900,+Houston,+TX+77002/data=!4m2!3m1!1s0x8640bf305d70a28f:0xdbeb4f628267a8f4?sa=X&ved=0CB4Q8gEwAGoVChMIud7G9KeOxwIVwzaICh1DCQeU" target="_blank">get directions</a></div>'],
+        '<p>440 Louisiana St, Suite 2450<br>Houston, TX 77002<br> <a href="https://www.google.com/maps/place/440+Louisiana+St+%231900,+Houston,+TX+77002/data=!4m2!3m1!1s0x8640bf305d70a28f:0xdbeb4f628267a8f4?sa=X&ved=0CB4Q8gEwAGoVChMIud7G9KeOxwIVwzaICh1DCQeU" target="_blank">get directions</a></div>'],
         ['<div class="info_content">' +
         '<h3>Seattle Office</h3>' +
         '<p>119 First Avenue South, Suite 500<br>Seattle, WA 98104<br> <a href="https://www.google.com/maps/place/440+Louisiana+St+%231900,+Houston,+TX+77002/data=!4m2!3m1!1s0x8640bf305d70a28f:0xdbeb4f628267a8f4?sa=X&ved=0CB4Q8gEwAGoVChMIud7G9KeOxwIVwzaICh1DCQeU" target="_blank">get directions</a></div>']

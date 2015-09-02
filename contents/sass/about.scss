@@ -4,55 +4,56 @@ body.about_lp {
 
 .about_lp {
     .background_photos {
-        padding-bottom: 85%;
-        background-repeat: no-repeat;
-        position: relative;
 
         h3 {
-            position: absolute;
-            top: 17px;
-            left: 25px;
             @include font-size(39px);
-            color: #fff;
-            margin: 0;
+            color: $copy_color;
+            margin: 30px 0;
         }
 
-        @include breakpoint(med) {
-            padding-bottom: 32%;
+        img {
+            width: 100%;
+
+            @include breakpoint(med) {
+                float: left;
+                width: 50%;
+            }
+            
+            &.second {
+                display: none;
+
+                @include breakpoint(med) {
+                    display: inline-block;
+                }
+            }
         }
+
     }
 
     .value_photo {
         @extend .background_photos;
-        &.first {
-            background-image:url(/assets/images/value-photo1.jpg);
-        }
-        &.second {
-            display: none;
-            background-image:url(/assets/images/value-photo1.jpg);
-
-
-            @include breakpoint(med) {
-                display: inline-block;
-            }
-        }
     }
 
     .discription_copy {
         @include font-size(16px);
         line-height: 21px;
-        margin: 35px 0 100px 0;
+        margin: 35px 0 0 0;
 
         @include breakpoint(med) {
             line-height: 25px;
-            margin: 35px auto 100px auto;
-            padding: 0 7%;
-            text-align: center;
+            margin: 35px 0 40px 0;
+            text-align: left;
             display: block;
+            max-width: 900px;
         }
 
         ul {
             @extend .list_style
+        }
+
+        a {
+            margin-bottom: 100px;
+            display: block;
         }
     }
 }

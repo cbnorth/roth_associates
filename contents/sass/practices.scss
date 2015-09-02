@@ -16,6 +16,10 @@ body.practices_lp {
             font-weight: normal;
         }
 
+        p {
+            margin: 20px 0;
+        }
+
         @include breakpoint(med) {
             line-height: 25px;
             margin: 35px 0 100px 0;

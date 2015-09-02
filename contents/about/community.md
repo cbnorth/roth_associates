@@ -1,14 +1,1 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec orci quam, sagittis nec ante ut, rhoncus viverra est. Quisque feugiat aliquet orci, vitae faucibus erat convallis non. Phasellus lacinia justo sit amet ligula volutpat, a convallis quam aliquet. 
-
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
+Giving back to the community is a priority at Roth & Associates.  We believe that mentoring the youth of our community provides a strong basis for hope of the future. Whether presenting "The Case of the Missing Cookies" for trial or walking through the halls of the State Capitol, Roth & Associates mentors Houston's fourth graders to help them see a brighter future. We proudly provide pro bono work representing women who have been abused and individuals who have been displaced due to devastating circumstances. In addition, we proudly serve on the board of the Mexican American Bar Association of Houston and provide philanthropic support for Shriner’s Children’s Hospital.

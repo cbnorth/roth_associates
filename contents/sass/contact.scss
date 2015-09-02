@@ -1,11 +1,9 @@
 .contact_lp {
-    background-color: $light_background;
+    #content {
+        background-color: $light_background;
+    }
     #map_wrapper {
         height: 400px;
-    }
-
-    h1 {
-        margin-bottom: 40px;
     }
 
     #map_canvas {
@@ -19,6 +17,11 @@
         line-height: 65px;
         position: relative;
         padding-left: 50px;
+        
+        @include breakpoint(med) {
+            margin-left: 70px;
+        }
+
     }
 
     .email:before {
@@ -37,7 +40,7 @@
         content: "";
         position: absolute;
         left: 0;
-        top: 8px;
+        top: 16px;
         background-image: url(/assets/images/person_icon.png);
         background-size: 100%;
         background-repeat: no-repeat;
@@ -50,9 +53,20 @@
         line-height: 45px;
         margin-top: 0;
     }
+    
+    .content_slot {
+        padding: 70px 0 50px 0;
+
+        h1 {
+            margin-bottom: 40px;
+            text-indent: -9999px;
+            position: absolute;
+        }
+    }
 
     .contact_statement {
         display: none;
+        margin-bottom: 0;
 
         @include breakpoint(med) {
             display: inline-block;

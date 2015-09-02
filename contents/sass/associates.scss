@@ -12,26 +12,19 @@ body.associates_lp, body.assocaite_detail_lp {
     }
     
     .associate {
+        width: 100%;
+        float: none;
         h2 {
             color: $alt_headline_clolor;
             text-transform: uppercase;
             letter-spacing: 2px;
             @include font-size(20px);
         }
-        @media screen and (min-width: 450px) {
-            width: 50%;
-            float: left;
-        }
-
-        @include breakpoint(med) {
-            width: 100%;
-            float: none;
-        }
     }
 
     .headshot {
         display: block;
-        max-height: 400px;
+        max-height: 500px;
         overflow: hidden;
         position: relative;
         margin-bottom: 55px;

@@ -1,10 +1,1 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec orci quam, sagittis nec ante ut, rhoncus viverra est. Quisque feugiat aliquet orci, vitae faucibus erat convallis non. Phasellus lacinia justo sit amet ligula volutpat, a convallis quam aliquet. 
-
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
-- Name Item Goes Here
+At Roth & Associates we foster a professional atmosphere with a rooted philosophy based on respect.  There is no "top-down" mentality when you come to work for R&A.  Whether a senior partner or the mail clerk, every person who comes through the door is met with the understanding that R&A works as one organism.  Respect, love, and understanding is what makes R&A one of the most efficient law firms in the country.

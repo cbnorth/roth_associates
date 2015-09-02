@@ -30,15 +30,21 @@
     .hero {
         background-image:url(/assets/images/home-hero.jpg);
         background-repeat: no-repeat;
-        background-size: 200%;
+        background-size: 110%;
         background-position: 50% 0;
         position: relative;
         padding-bottom: 72%;
 
         @include breakpoint(med) {
-            padding-bottom: 36.5%;
+            padding-bottom: 60.5%;
             background-size: 100%;
             background-position: 0 0;
+        }
+
+        @include breakpoint(lg) {
+            padding-bottom: 36.5%;
+            background-size: 100%;
+            background-position: 0 -111px;
         }
     }
 
@@ -46,7 +52,7 @@
         position: absolute;
         width: 100%;
         left: 0;
-        bottom: 25%;
+        bottom: 10%;
 
         h2 {
             @include font-size(36px);
@@ -69,13 +75,13 @@
         }
 
         @media screen and (min-width: 570px) {
-            bottom: 35%;
+            bottom: 10%;
         }
 
         @include breakpoint(med) {
-            bottom: 25%;
+            bottom: 5%;
             h2 {
-                @include font-size(55px);
+                @include font-size(65px);
             }
 
             .link {
@@ -163,8 +169,8 @@
             position: relative;
             display: block;
             float: left;
-            height: 123px;
-            margin-bottom: 37px;
+            height: 260px;
+            margin-bottom: 14px;
 
             &:after {
                 content: '';
@@ -181,30 +187,42 @@
             }
 
             &.motor:after {
-                height: 61px;
-                background-position: center 0;
+                background-image: url(/assets/images/wreck.png);
+                background-position: center center;
+                background-size: 100%;
+                width: 90%;
+                padding-bottom: 69%;
             }
 
             &.medical:after {
-                height: 63px;
-                background-position: center -74px;
+                background-image: url(/assets/images/medical.png);
+                background-position: center center;
+                background-size: 100%;
+                width: 90%;
+                padding-bottom: 69%;
             }
 
             &.product:after {
-                height: 65px;
-                background-position: center -157;
+                background-image: url(/assets/images/product.png);
+                background-position: center center;
+                background-size: 100%;
+                width: 90%;
+                padding-bottom: 69%;
             }
 
             &.premises:after {
-                height: 73px;
-                background-position: center -236;
+                background-image: url(/assets/images/premise.png);
+                background-position: center center;
+                background-size: 100%;
+                width: 90%;
+                padding-bottom: 69%;
             }
 
             .link {
                 display: block;
                 position: absolute;
                 bottom: 0;
-                width: 100%;
+                width: 90%;
                 text-align: center;
                 word-spacing: 1000px;
                 line-height: 21px;
@@ -218,6 +236,8 @@
             @include breakpoint(med) {
                 width: 25%;
                 margin-top: 0;
+                height: 333px;
+                margin-bottom: 37px;
             }
         }
     }
@@ -291,10 +311,9 @@
 
     .slot_image {
         display: none;
-        background-image:url(/assets/images/slot-image-temp.jpg);
+        background-image:url(/assets/images/top-firms.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center center;
         position: absolute;
         right: 0;
         top: 0;
