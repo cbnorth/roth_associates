@@ -7,18 +7,21 @@ body.practices_lp {
     .discription_copy {
         @include font-size(16px);
         line-height: 21px;
-        margin: 35px 0 100px 0;
+        margin: 35px 0 30px 0;
+        overflow: hidden;
 
         h1 {
             margin-top: 0;
             line-height: 46px;
             font-weight: normal;
             @include font-size(23px);
+            background-color: #374464;
+            color: white;
+            padding-left: 15px;
         }
 
         p {
             margin: 0 0 10px 0;
-            border-bottom: 1px solid;
             padding-bottom: 10px;
         }
 
@@ -32,12 +35,35 @@ body.practices_lp {
         ul {
             @extend .list_style
         }
+
+        .practice_image {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+
+            @include breakpoint(med) {
+                width: 48%;
+                float: left;
+            }
+        }
+
+        ul {
+            @include breakpoint(med) {
+                width: 50%;
+                float: left;
+                padding-left: 45px;
+            }
+        }
     }
 
-    @include breakpoint(med) {
-        .page_nav {
-            margin: 35px 0 40px 0;
-        }
+    .link {
+        display: block;
+        clear: both;
+        padding-top: 50px;
+        width: 100%;
+        text-align: center;
     }
 }
 

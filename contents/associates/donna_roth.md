@@ -8,8 +8,8 @@ thumbnail: donna_roth.jpg
 email: droth@rothpractice.com
 
 name: Donna Roth
-position: Founding Partner
-blurb: For 25 years, Donna has built her reputation and experience by practicing civil litigation and family law.  Backed by a belief that justice and fair play are the fundamental values of the United States and Texas Constitutions, the Law Offices of Donna Roth is here to fight for your rights.
+position: Founding Member
+blurb: For 28 years, Donna has built her reputation and experience by practicing personal injury trial law.  Backed by a belief that justice and fair play are the fundamental values of the United States and Texas Constitutions, Roth &amp; Associates is here to fight for your rights.
 ---
 
 I am humbled to have lived the true American success story. My grandparents arrived through Ellis Island in New York City from Ireland and Italy in the early 1900s.  My father was a mechanic; my mother a hairdresser.  I was the first in my family to obtain a high school diploma of which my parents were extremely proud.  I wanted more; I wanted to be a lawyer.  However, with no money for college, I went first to work, full-time as a secretary, often working three jobs at a time saving every nickel to attend college.  After six years I had saved enough to enroll full-time at the local community college.  I graduated from St. John’s University in May, 1983.

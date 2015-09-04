@@ -2,6 +2,10 @@
 
 Our car wreck attorneys will fight for you and your family for maximum compensation.
 
+<div class="practice_image">
+    <img src="/assets/images/accident-landing.jpg" />
+</div>
+
 - Cars
 - SUVs
 - Buses

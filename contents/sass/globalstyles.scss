@@ -86,7 +86,7 @@ li {
         text-indent: -20px;
         list-style: none;
         display: inline-block;
-        width: auto;
+        width: 100%;
 
         &:before {
             content: "• ";
@@ -99,7 +99,7 @@ li {
 
     @include breakpoint(med) {
         li {
-            width: 30%;
+            width: 49%;
         }
     }
 }

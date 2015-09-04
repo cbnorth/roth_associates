@@ -2,6 +2,10 @@
 
 When a defective product has injured you or a loved one let our family help yours.
 
+<div class="practice_image">
+    <img src="/assets/images/product-landing.jpg" />
+</div>
+
 - Dangerous drugs 
 - Baby products
 - Child products

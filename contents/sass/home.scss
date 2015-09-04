@@ -68,7 +68,7 @@
         @include breakpoint(lg) {
             padding-bottom: 36.5%;
             background-size: 100%;
-            background-position: 0 -111px;
+            background-position: 0 -48px
         }
     }
 
@@ -156,7 +156,7 @@
         }
 
         @include breakpoint(med) {
-            margin: 20px auto;
+            margin: 0 auto;
             h1 {
                 @include font-size(44px);
             }
