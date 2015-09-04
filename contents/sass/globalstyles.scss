@@ -162,7 +162,7 @@ li {
     }
 
     @include breakpoint(lg) {
-        height: 60px;
+        height: 72px;
         width: 191px;
     }
 
@@ -266,12 +266,13 @@ header {
         &:before {
             content: '';
             @include gavel;
-            background-size: 15px;
-            width: 15px;
-            height: 26px;
+            background-size: 30px;
+            width: 30px;
+            height: 34px;
             display: inline-block;
             position: absolute;
             left: 0;
+            top: -5px;
         }
     }
 
@@ -653,7 +654,7 @@ footer {
                 position: absolute;
                 left: 0;
                 top: -16px;
-                width: 39px;
+                width: 53px;
                 height: 71px;
             }
         }
