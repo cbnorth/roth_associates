@@ -5,7 +5,7 @@ link: andrea_roth
 
 title: Roth Associates | Andrea Roth
 thumbnail: andrea_roth.jpg
-email: droth@rothpractice.com
+email: ars@rothpractice.com
 
 name: Andrea Roth
 position: Associate
